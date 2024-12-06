@@ -20,10 +20,19 @@ def user_add_pizza(collection):
     collection = collection + (add_pizza,)
     return collection
 """
+def pizza_exist(user, collection):
+    if user in collection:
+        return False
+    else:
+        return True
+
 
 def user_add_pizza(collection):
     user_add = input("Pizza à ajouter : ")
-    collection.append(user_add)
+    if pizza_exist(user_add, collection) is False:
+        print("Erreur la pizza existe déjà dans la liste !")
+    else:
+        collection.append(user_add)
     
 
 
